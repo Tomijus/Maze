@@ -23,7 +23,7 @@ namespace Maze
             {
                 Functions.CreateLogFile(@"..\..\..\log.txt");
                 //Read config file
-                System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\RPAMaze15x12.txt");
+                System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\RPAMaze.txt");
                 while ((line = file.ReadLine()) != null)
                 {
                     if (counter == 0)
