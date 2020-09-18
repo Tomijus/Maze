@@ -22,19 +22,21 @@ namespace Maze
             try
             {
                 Functions.CreateLogFile(@"..\..\..\log.txt");
-                System.IO.StreamReader file =
-            new System.IO.StreamReader(@"..\..\..\RPAMaze.txt");
+                //Read config file
+                System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\..\RPAMaze15x12.txt");
                 while ((line = file.ReadLine()) != null)
                 {
                     if (counter == 0)
                     {
+                        //Get height and width of maze
                         height = Convert.ToInt32(line.Split(" ")[0]);
                         width = Convert.ToInt32(line.Split(" ")[1]);
                         maze = new int[height, width];
                     }
-                    else if (counter <= width)
+                    else if (counter <= height)
                     {
-                        lineItems = line.Split(" ").ToList();
+                        //Add maze to two dimensional array
+                        lineItems = line.Trim().Split(" ").ToList();
                         int xcounter = 0;
                         foreach (string item in lineItems)
                         {
@@ -46,18 +48,20 @@ namespace Maze
                 }
                 file.Close();
                 startPositionCoordinates = Functions.GetStartPositionCoordinates(maze);
+                //Assign start position coordinates
                 x = startPositionCoordinates.Item1;
                 y = startPositionCoordinates.Item2;
-
+                //Start
                 Functions.PrintMaze(maze);
                 Console.WriteLine("Click ENTER to start");
-                Console.WriteLine("Click ESCAPE to change start position.");
+                Console.WriteLine("Click SPACE to change start position.");
 
-                if (Console.ReadKey().Key == ConsoleKey.Escape)
+                if (Console.ReadKey().Key == ConsoleKey.Spacebar)
                 {
+                    //Change start position
                     Console.Clear();
                     Functions.PrintMaze(maze);
-                    Console.WriteLine("Enter new start position. X for vertical movement, Y for horizontal. (Posible range: 1-{0})", width);
+                    Console.WriteLine("Enter new start position. X for vertical movement, Y for horizontal. (Posible ranges: x 1-{0}, y 1-{1})", height, width);
                     Console.WriteLine("NOTE: start position can be only on path tile!");
                     Console.WriteLine("X=");
                     int newx = Convert.ToInt32(Console.ReadLine()) - 1;
@@ -173,7 +177,7 @@ namespace Maze
                         default:
                             break;
                     }
-                } while (x != 0 && y != 0 && x != width - 1 && y != width - 1);
+                } while (x != 0 && y != 0 && x != height - 1 && y != width - 1);
 
 
             }
