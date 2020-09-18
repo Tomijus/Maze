@@ -21,9 +21,9 @@ namespace Maze
 
             try
             {
-                Functions.CreateLogFile(@"C:\Users\Tomas\Downloads\task for RPA candidate\task for candidate\log.txt");
+                Functions.CreateLogFile(@"..\..\..\log.txt");
                 System.IO.StreamReader file =
-            new System.IO.StreamReader(@"C:\Users\Tomas\Downloads\task for RPA candidate\task for candidate\RPAMaze.txt");
+            new System.IO.StreamReader(@"..\..\..\RPAMaze.txt");
                 while ((line = file.ReadLine()) != null)
                 {
                     if (counter == 0)

@@ -1,0 +1,6 @@
+2020-09-18 14:19:32 Changed start position. Old coordinates: x=3, y=8. New: x=7, y=7.
+
+2020-09-18 14:19:37[8,7] Move down. 
+
+2020-09-18 14:19:37[9,7] Move down. 
+

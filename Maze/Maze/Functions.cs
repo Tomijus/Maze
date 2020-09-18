@@ -29,7 +29,7 @@ namespace Maze
 
         public static void AddToLogFile(string comment)
         {
-            StreamWriter log = new StreamWriter(@"C:\Users\Tomas\Downloads\task for RPA candidate\task for candidate\Log.txt", append: true);
+            StreamWriter log = new StreamWriter(@"..\..\..\Log.txt", append: true);
             log.WriteLine(comment);
             log.Close();
         }
