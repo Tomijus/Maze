@@ -53,7 +53,7 @@ namespace Maze
                 y = startPositionCoordinates.Item2;
                 //Start
                 Functions.PrintMaze(maze);
-                Console.WriteLine("Click ENTER to start");
+                Console.WriteLine("Click ENTER (or any other) to start");
                 Console.WriteLine("Click SPACE to change start position.");
 
                 if (Console.ReadKey().Key == ConsoleKey.Spacebar)
@@ -98,7 +98,6 @@ namespace Maze
                     switch (Console.ReadKey().Key)
                     {
                         case ConsoleKey.DownArrow:
-                            //[+1, 0]
                             if (maze[x + 1, y] == 0)
                             {
                                 maze[x, y] = 0;
@@ -117,7 +116,6 @@ namespace Maze
                             }
                             break;
                         case ConsoleKey.UpArrow:
-                            //[-1, 0]
                             if (maze[x - 1, y] == 0)
                             {
                                 maze[x, y] = 0;
@@ -136,7 +134,6 @@ namespace Maze
                             }
                             break;
                         case ConsoleKey.RightArrow:
-                            //[0, +1]
                             if (maze[x, y + 1] == 0)
                             {
                                 maze[x, y] = 0;
@@ -155,7 +152,6 @@ namespace Maze
                             }
                             break;
                         case ConsoleKey.LeftArrow:
-                            //[0, -1]
                             if (maze[x, y - 1] == 0)
 
                             {
