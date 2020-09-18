@@ -13,7 +13,6 @@ namespace Maze
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    //Console.Write(matrix[i, j] + "\t");
                     Console.Write(matrix[i, j]);
                 }
                 Console.WriteLine();
@@ -22,7 +21,6 @@ namespace Maze
 
         public static void CreateLogFile(string path)
         {
-            //new StreamWriter(path);
             FileStream log = File.Open(path, FileMode.Create);
             log.Close();
         }
@@ -48,7 +46,7 @@ namespace Maze
                     }
                 }
             }
-            return Tuple.Create(i, j);
+            throw new ArgumentException("Start position doesn't exist.");
         }
     }
 }
